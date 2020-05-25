@@ -1,25 +1,30 @@
 package org.khelekore.prtree.junit;
 
-import java.awt.geom.Rectangle2D;
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
 import org.junit.Before;
 import org.junit.Test;
-import org.khelekore.prtree.DistanceResult;
-import org.khelekore.prtree.NodeFilter;
-import org.khelekore.prtree.MinDist2D;
 import org.khelekore.prtree.DistanceCalculator;
-import org.khelekore.prtree.MBRConverter;
+import org.khelekore.prtree.DistanceResult;
 import org.khelekore.prtree.MBR;
+import org.khelekore.prtree.MinDist2D;
+import org.khelekore.prtree.NodeFilter;
 import org.khelekore.prtree.PRTree;
 import org.khelekore.prtree.PointND;
+import org.khelekore.prtree.Rectangle2DConverter;
 import org.khelekore.prtree.SimpleMBR;
 import org.khelekore.prtree.SimplePointND;
 
-import static org.junit.Assert.*;
+import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /** Tests for PRTree.
  */
@@ -34,20 +39,6 @@ public class TestPRTree {
     @Before
     public void setUp() {
 	tree = new PRTree<Rectangle2D> (converter, BRANCH_FACTOR);
-    }
-
-    private class Rectangle2DConverter implements MBRConverter<Rectangle2D> {
-	public int getDimensions () {
-	    return 2;
-	}
-
-	public double getMin (int axis, Rectangle2D t) {
-	    return axis == 0 ? t.getMinX () : t.getMinY ();
-	}
-
-	public double getMax (int axis, Rectangle2D t) {
-	    return axis == 0 ? t.getMaxX () : t.getMaxY ();
-	}
     }
 
     @Test
