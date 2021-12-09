@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("com.intellectualsites.prtree:PRTree:2.0.0")
+    implementation("com.intellectualsites.prtree:PRTree:2.0.0")
 }
 ```
 
