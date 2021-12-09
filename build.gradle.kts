@@ -84,10 +84,24 @@ publishing {
                     }
                 }
 
+                developers {
+                    developer {
+                        id.set("NotMyFault")
+                        name.set("NotMyFault")
+                        organization.set("IntellectualSites")
+                        email.set("contact@notmyfault.dev")
+                    }
+                }
+
                 scm {
                     url.set("https://github.com/IntellectualSites/PRTree")
                     connection.set("scm:https://IntellectualSites@github.com/IntellectualSites/PRTree.git")
                     developerConnection.set("scm:git://github.com/IntellectualSites/PRTree.git")
+                }
+
+                issueManagement {
+                    system.set("GitHub")
+                    url.set("https://github.com/IntellectualSites/PRTree/issues")
                 }
             }
         }
