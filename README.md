@@ -21,10 +21,34 @@ of setting up and querying a PRTree.
 
 Basic usage goes something like this: 
 
-    PRTree<Rectangle2D> tree = 
+```java    
+PRTree<Rectangle2D> tree = 
         new PRTree<Rectangle2D> (new Rectangle2DConverter (), 10);
     Rectangle2D rx = new Rectangle2D.Double (0, 0, 1, 1);
     tree.load (Collections.singletonList (rx));
     for (Rectangle2D r : tree.find (0, 0, 1, 1)) {
         System.out.println ("found a rectangle: " + r);
     }
+```
+
+### Gradle
+```kotlin
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly("com.intellectualsites.prtree:PRTree:2.0.0")
+}
+```
+
+### Maven
+```xml
+<dependency>
+    <groupId>com.intellectualsites.prtree</groupId>
+    <artifactId>PRTree</artifactId>
+    <version>2.0.0</version>
+</dependency>
+```
+
+You need to shade PRTree into your software by either using maven shade or gradle shadow.
