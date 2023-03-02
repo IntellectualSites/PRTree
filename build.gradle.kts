@@ -25,7 +25,7 @@ dependencies {
 }
 
 group = "com.intellectualsites.prtree"
-version = "2.0.1"
+version = "2.0.2-SNAPSHOT"
 
 tasks {
 
