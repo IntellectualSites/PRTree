@@ -89,7 +89,7 @@ publishing {
                         id.set("NotMyFault")
                         name.set("NotMyFault")
                         organization.set("IntellectualSites")
-                        email.set("contact@notmyfault.dev")
+                        email.set("contact(at)notmyfault.dev")
                     }
                 }
 
