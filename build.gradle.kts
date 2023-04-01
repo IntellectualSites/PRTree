@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation("junit:junit:4.8.1")
+    testImplementation("junit:junit:4.13.2")
 }
 
 group = "com.intellectualsites.prtree"
